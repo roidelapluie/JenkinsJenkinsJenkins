@@ -1,0 +1,11 @@
+table, tr{
+border: 1px solid #888888;
+border-collapse:collapse;
+}
+table{
+    margin: 2em auto;
+}
+td, th{
+    padding-left:.7em;
+    padding-right:.7em;
+}

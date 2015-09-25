@@ -1,15 +1,24 @@
 <!doctype html>
-<html lang="en" data-ng-app>
+<html lang="en" data-ng-app="jenkinsjenkinsjenkinsApp">
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="js/angular.min.js"></script>
+  <title>JenkinsJenkinsJenkins</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/angular.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers/jenkins.js"></script>
+  <script src="js/app.js"></script>
 </head>
-<body>
+<body data-ng-controller="JobsListCtrl">
 
-  <p>Nothing here {{'yet' + '!'}}</p>
 
+<table>
+    <tr><th></th><th>Job name</th><th>Jenkins Server</th></tr>
+    <tr data-ng-repeat="job in jobs">
+        <td><img title="{{job.color}}" alt="{{job.color}}" src="{{config.jenkins[config.defaultjenkins]}}/images/32x32/{{job.icon}}.png"/></td>
+        <td><a href="{{job.url}}">{{job.name}}</a></td>
+        <td>{{job.jenkinsserver}}</td>
+    </tr>
+</table>
 </body>
 </html>
